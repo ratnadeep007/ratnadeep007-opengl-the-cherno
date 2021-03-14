@@ -69,7 +69,6 @@ int main(void)
         IndexBuffer ib(indices, 6);
 
         Shader shader("res/shaders/Basic.shader");
-        shader.Bind();
 
         va.Unbind();
         shader.Unbind();
@@ -100,10 +99,10 @@ int main(void)
             r += increment;
 
             /* Swap front and back buffers */
-            glfwSwapBuffers(window);
+            GLCall(glfwSwapBuffers(window));
 
             /* Poll for and process events */
-            glfwPollEvents();
+            GLCall(glfwPollEvents());
         }
     }
 
